@@ -39,7 +39,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
     margin: 0; // 1
-    font-family: $font-family-roboto, $font-family-base;
+    font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     line-height: $line-height-base;
@@ -92,17 +92,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin-top: 0;
     margin-bottom: $paragraph-margin-bottom;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 
 ol,
 ul {
     margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
+    margin-bottom: 1rem;
 }
 
 // stylelint-disable font-weight-notation
