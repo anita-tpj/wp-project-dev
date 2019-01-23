@@ -13,5 +13,4 @@ add_action('wp_enqueue_scripts', 'we_enqueue');
 add_action('after_setup_theme', 'we_setup_theme');
 add_action('widgets_init', 'we_widgets');
 
-
 //Shortcodes
