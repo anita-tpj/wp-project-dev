@@ -7,12 +7,14 @@ function we_enqueue() {
 
     wp_register_script('we_fbox', get_template_directory_uri() . '/src/scripts/src/fancy-box.js', array('jquery'), true);
     wp_register_script('we_bootstrap', get_template_directory_uri() . '/src/scripts/src/bootstrap.js', array('jquery'), array(), '4.0.0', true);
+    wp_register_script('we_bootstrap_bundle', get_template_directory_uri() . '/src/scripts/src/bootstrap.bundle.js', array('jquery'), array(), '4.0.0', true);
     wp_register_script('we_script', get_template_directory_uri() . '/src/scripts/src/script.js', array('jquery'), true);
 
     if(WP_DEBUG === true) {
         wp_enqueue_script('jquery');
         wp_enqueue_script('we_fbox');
         wp_enqueue_script('we_bootstrap');
+        //wp_enqueue_script('we_bootstrap_bundle');
         wp_enqueue_script('we_script');
     }else {
         wp_enqueue_script('jquery');
