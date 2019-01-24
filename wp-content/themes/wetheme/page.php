@@ -16,6 +16,7 @@
                     <p class="blog-post-content"><?php the_content(); ?></p>
                    
                 </div><!-- /.blog-post -->
+                <?php comments_template(); ?>
    <?php
             }
         }
