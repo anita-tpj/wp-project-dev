@@ -36,7 +36,7 @@
                     <div class="blog-post-tags"><?php the_tags(); ?></div>
                 </div><!-- /.blog-post -->
 
-                <nav class="blog-pagination">
+                <nav class="blog-pagination text-center">
                     <span>
                         <?php
                         next_post_link( '%link' ,'« %title'); ?>
@@ -47,6 +47,7 @@
                         previous_post_link('%link', '%title »'); ?>
                     </span>
                 </nav>
+                <?php comments_template(); ?>
    <?php
             }
         }
