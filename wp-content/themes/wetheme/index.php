@@ -77,8 +77,29 @@
     ?>
 
     <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            <?php 
+                if( get_next_posts_link() ) : ?>
+                    <span class="btn btn-outline-primary">
+                        <?php
+                        next_posts_link( '« Newer'); ?>
+                    </span>
+                <?php else: ?>
+                    <span class="btn btn-outline-secondary disabled">« Newer
+                    </span>
+                <?php
+                endif;
+
+                  if( get_previous_posts_link() ) : ?>
+                    <span class="btn btn-outline-primary">
+                        <?php 
+                        previous_posts_link( 'Older »'); ?>
+                    </span>
+                <?php else: ?>
+                    <span class="btn btn-outline-secondary disabled">Older »
+                    </span>
+                <?php
+                endif; ?>
+
     </nav>
 
 </div><!-- /.blog-main -->
