@@ -69,6 +69,7 @@
                         <span class="tag"><?php the_category(','); ?></span>
                     </div>
                     <p class="blog-post-excerpt"><?php the_excerpt(); ?></p>
+                    <div class="blog-post-read-more"><a href="<?php the_permalink(); ?>" type="button" class="btn btn-sm btn-outline-dark"><?php echo __('Read More', 'wetheme'); ?></a></div>
                 </div><!-- /.blog-post -->
 
     <?php
