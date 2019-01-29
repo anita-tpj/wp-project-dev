@@ -25,7 +25,7 @@ function we_theme_opts_page() { ?>
                     <h5><?php _e('Logo', 'wetheme'); ?></h5>
                     <div class="form-group">
                         <label for="logoType"><?php _e('Logo Type', 'wetheme'); ?></label>
-                        <select class="form-control" id="logoType">
+                        <select class="form-control" id="logoType" name="we_inputLogoType">
                             <option value="1"><?php _e('Site Name', 'wetheme'); ?></option>
                             <option value="2"><?php _e('Image', 'wetheme'); ?></option>
                         </select>
