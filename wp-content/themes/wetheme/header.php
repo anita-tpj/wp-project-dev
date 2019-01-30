@@ -1,5 +1,6 @@
-<?php
-wp_head(); ?>
+<?php 
+$theme_opts = get_option('we_opts');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,6 +11,8 @@ wp_head(); ?>
     <meta name="generator" content="Jekyll v3.8.5">
     <title><?php the_title(); ?></title>
 
+    <?php
+    wp_head(); ?>
 
     <style>
       .bd-placeholder-img {
@@ -27,7 +30,14 @@ wp_head(); ?>
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+        <?php
+        if($theme_opts['logo_type']==1): ?>
+          <a class="navbar-brand" href="index.html"><?php bloginfo('name'); ?></a>
+        <?php
+        else: ?>
+          <a class="navbar-brand" href="index.html"><img src="<?php echo $theme_opts['logo_img'] ?>"></a>
+        <?php
+        endif; ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,6 +53,21 @@ wp_head(); ?>
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
+          <ul>
+            <?php
+            if(!empty($theme_opts['twitter'])): ?>
+            <li><a href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
+            <?php
+            endif; 
+            if(!empty($theme_opts['facebook'])): ?>
+              <li><a href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
+            <?php
+            endif;
+            if(!empty($theme_opts['youtube'])): ?>
+              <li><a href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
+            <?php
+            endif; ?>
+          </ul>
         </div>
       </nav>
 
