@@ -37,7 +37,7 @@ function we_theme_opts_page() {
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Logo Image" name="we_inputLogoImg">
+                        <input type="text" class="form-control" placeholder="Logo Image" name="we_inputLogoImg" value="<?php echo $theme_opts['logo_img']; ?>">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="inputLogoImg"><?php _e('Upload', 'wetheme'); ?></button>
                         </div>
