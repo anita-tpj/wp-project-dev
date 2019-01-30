@@ -14,6 +14,7 @@ include(get_template_directory() . '/includes/admin/menus.php');
 include(get_template_directory() . '/includes/admin/options-page.php');
 include(get_template_directory() . '/includes/admin/init.php');
 include(get_template_directory() . '/process/save-options.php');
+require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php'; // Register Custom Navigation Walker
 
 //Action & Filters Hooks
 add_action('wp_enqueue_scripts', 'we_enqueue');

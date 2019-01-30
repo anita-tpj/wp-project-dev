@@ -42,29 +42,37 @@ $theme_opts = get_option('we_opts');
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <?php 
-            wp_nav_menu(array(
-                'theme_location'      => 'primary',
-                'container'           => false,
-                'menu_class'          => 'navbar-nav mr-auto'
-                )
-            );?>
+          <?php  
+            wp_nav_menu( array(
+              'theme_location'  => 'primary',
+              'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+              'container'       => 'div',
+              'container_class' => 'collapse navbar-collapse',
+              'container_id'    => 'bs-example-navbar-collapse-1',
+              'menu_class'      => 'navbar-nav mr-auto',
+              'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+              'walker'          => new WP_Bootstrap_Navwalker(),
+            ) );  
+            ?>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
           </form>
-          <ul>
+          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <?php
             if(!empty($theme_opts['twitter'])): ?>
-            <li><a href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
             <?php
             endif; 
             if(!empty($theme_opts['facebook'])): ?>
-              <li><a href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
             <?php
             endif;
             if(!empty($theme_opts['youtube'])): ?>
-              <li><a href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
             <?php
             endif; ?>
           </ul>
