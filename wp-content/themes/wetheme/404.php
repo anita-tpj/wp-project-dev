@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php 
+get_header(); ?>
 
 <main role="main" class="container">
     <div class="row">
@@ -13,4 +14,5 @@
 
 </main><!-- /.container -->
 
-<?php get_footer(); ?>
+<?php 
+get_footer(); ?>

@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php 
+get_header(); ?>
 
 <main role="main" class="container">
 <div class="row">
@@ -25,11 +26,10 @@
 </div><!-- /.blog-main -->
 
 <aside class="col-md-4 blog-sidebar">
-    <?php get_sidebar(); ?>
+    <?php
+    get_sidebar(); ?>
 </aside><!-- /.blog-sidebar -->
-
 </div><!-- /.row -->
-
 </main><!-- /.container -->
-
-<?php get_footer(); ?>
+<?php 
+get_footer(); ?>

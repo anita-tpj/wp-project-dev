@@ -1,17 +1,16 @@
 <div class="blog-post-comment-wrap">
     <?php 
-        foreach($comments as $comment): ?>
-            <h4><a href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a> - <small><?php comment_date(); ?></small></h4>
-            <div class="blog-post-comment-body">
-                <p><?php comment_text(); ?></p>
-            </div>
-        <?php 
-        endforeach; ?> <!-- blog-post-comment-body -->
+    foreach($comments as $comment): ?>
+        <h4><a href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a> - <small><?php comment_date(); ?></small></h4>
+        <div class="blog-post-comment-body">
+            <p><?php comment_text(); ?></p>
+        </div>
+    <?php 
+    endforeach; ?> <!-- blog-post-comment-body -->
 </div> <!-- comment-wrap -->
 
 <?php
-
-if(comments_open()): ?>
+if(comments_open()) : ?>
     <h4>Leave a Comment</h4>
     <form action="<?php echo site_url('wp-comments-post.php'); ?>" method="post" id="commentsform">
         <input type='hidden' name='comment_post_ID' value='<?php echo $post->ID; ?>' id='comment_post_ID' />
@@ -41,6 +40,6 @@ if(comments_open()): ?>
     </div>
     </form>
 <?php
-else:
+else :
     _e('Comments are closed', 'wetheme');
 endif;

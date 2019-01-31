@@ -1,8 +1,8 @@
 <?php
-$theme_opts = get_option('we_opts');
-?>
+$theme_opts = get_option('we_opts'); ?>
 <footer class="blog-footer">
-  <?php echo $theme_opts['footer']; ?>
+  <?php 
+  echo $theme_opts['footer']; ?>
   <!--<p>Template built for WordPress by 
     <a href="https://tanita.webege.com">wall-E@New</a>.
   </p>-->

@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php 
+get_header(); ?>
 
 <div class="row mb-2">
 <div class="col-md-6">
@@ -40,70 +41,52 @@
     </h3>
 
     <?php
-        if(have_posts()) {
-            while(have_posts()) {
-                the_post(); ?>
-
-                <div class="blog-post">
-
-                <?php 
-                if(has_post_thumbnail()) { ?>
-                    <div class="blog-post-image">
-                        <?php 
-                        the_post_thumbnail('full', array('class' => 'img-fluid')); ?> 
-                    </div>
-                <?php
-                } ?>
-                    <h2 class="blog-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <div class="blog-post-meta">
-                        <span class="date"><?php the_time('g:i a'); ?></span>
-                        <span class="time"><?php the_time('d M Y'); ?></span>
-                        <span class="post-author">by <a href="<?php the_author_link(); ?>"><?php the_author(); ?></a></span>
-                        <span class="tag"><?php the_category(','); ?></span>
-                    </div>
-                    <p class="blog-post-excerpt"><?php the_excerpt(); ?></p>
-                    <div class="blog-post-read-more"><a href="<?php the_permalink(); ?>" type="button" class="btn btn-sm btn-outline-dark"><?php echo __('Read More', 'wetheme'); ?></a></div>
-                </div><!-- /.blog-post -->
-
+    if(have_posts()) :
+        while(have_posts()) : the_post(); ?>
+        <?php 
+        get_template_part('content'); ?>
     <?php
-            }
-        }
-    ?>
+        endwhile;
+    endif; ?>
 
     <nav class="blog-pagination">
-            <?php 
-                if( get_next_posts_link() ) : ?>
-                    <span class="btn btn-outline-primary">
-                        <?php
-                        next_posts_link( '« Newer'); ?>
-                    </span>
-                <?php else: ?>
-                    <span class="btn btn-outline-secondary disabled">« Newer
-                    </span>
+        <?php 
+        if( get_next_posts_link() ) : ?>
+            <span class="btn btn-outline-primary">
                 <?php
-                endif;
+                next_posts_link( '« Newer'); ?>
+            </span>
+        <?php 
+        else : ?>
+            <span class="btn btn-outline-secondary disabled">« Newer
+            </span>
+        <?php
+        endif;
 
-                  if( get_previous_posts_link() ) : ?>
-                    <span class="btn btn-outline-primary">
-                        <?php 
-                        previous_posts_link( 'Older »'); ?>
-                    </span>
-                <?php else: ?>
-                    <span class="btn btn-outline-secondary disabled">Older »
-                    </span>
-                <?php
-                endif; ?>
+        if( get_previous_posts_link() ) : ?>
+            <span class="btn btn-outline-primary">
+                <?php 
+                previous_posts_link( 'Older »'); ?>
+            </span>
+        <?php 
+        else : ?>
+            <span class="btn btn-outline-secondary disabled">Older »
+            </span>
+        <?php
+        endif; ?>
 
     </nav>
 
 </div><!-- /.blog-main -->
 
 <aside class="col-md-4 blog-sidebar">
-    <?php get_sidebar(); ?>
+    <?php 
+    get_sidebar(); ?>
 </aside><!-- /.blog-sidebar -->
 
 </div><!-- /.row -->
 
 </main><!-- /.container -->
 
-<?php get_footer(); ?>
+<?php 
+get_footer(); ?>

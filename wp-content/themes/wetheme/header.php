@@ -1,6 +1,5 @@
 <?php 
-$theme_opts = get_option('we_opts');
-?>
+$theme_opts = get_option('we_opts'); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,10 +29,10 @@ $theme_opts = get_option('we_opts');
     <div class="container">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <?php
-        if($theme_opts['logo_type']==1): ?>
+        if($theme_opts['logo_type']==1) : ?>
           <a class="navbar-brand" href="index.html"><?php bloginfo('name'); ?></a>
         <?php
-        else: ?>
+        else : ?>
           <a class="navbar-brand" href="index.html"><img src="<?php echo $theme_opts['logo_img'] ?>"></a>
         <?php
         endif; ?>
@@ -57,17 +56,17 @@ $theme_opts = get_option('we_opts');
           </form>
           <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <?php
-            if(!empty($theme_opts['twitter'])): ?>
+            if(!empty($theme_opts['twitter'])) : ?>
             <li class="nav-item">
               <a class="nav-link" href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
             <?php
             endif; 
-            if(!empty($theme_opts['facebook'])): ?>
+            if(!empty($theme_opts['facebook'])) : ?>
               <li class="nav-item">
                 <a class="nav-link" href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
             <?php
             endif;
-            if(!empty($theme_opts['youtube'])): ?>
+            if(!empty($theme_opts['youtube'])) : ?>
               <li class="nav-item">
                 <a class="nav-link" href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
             <?php
