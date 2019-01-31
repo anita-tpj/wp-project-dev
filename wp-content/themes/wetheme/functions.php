@@ -15,10 +15,12 @@ include(get_template_directory() . '/includes/admin/menus.php');
 include(get_template_directory() . '/includes/admin/options-page.php');
 include(get_template_directory() . '/includes/admin/init.php');
 include(get_template_directory() . '/process/save-options.php');
-require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php'; // Register Custom Navigation Walker
 include(get_template_directory() . '/includes/shortcodes/facebook.php');
 include(get_template_directory() . '/includes/theme_customizer.php');
 include(get_template_directory() . '/includes/front/head.php');
+require_once get_template_directory() . '/includes/libs/class-wp-bootstrap-navwalker.php'; // Register Custom Navigation Walker
+require_once get_template_directory() . '/includes/libs/class-tgm-plugin-activation.php'; // Register Custom Navigation Walker
+include(get_template_directory() . '/includes/register-plugins.php');
 
 
 //Action & Filters Hooks
@@ -30,6 +32,7 @@ add_action('admin_menu', 'we_admin_menus');
 add_action('admin_init', 'we_admin_init');
 add_action('customize_register', 'we_customize_register');
 add_action('wp_head', 'we_head');
+add_action( 'tgmpa_register', 'we_register_required_plugins' );
 
 //Shortcodes
 add_shortcode('we_fb', 'we_facebook_shortcode');
