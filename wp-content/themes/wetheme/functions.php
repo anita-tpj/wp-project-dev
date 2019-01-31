@@ -4,6 +4,7 @@
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
+add_theme_support('post-formats', array('aside', 'link', 'quote', 'video'));
 
 //Includes 
 include(get_template_directory() . '/includes/front/enqueue.php');
