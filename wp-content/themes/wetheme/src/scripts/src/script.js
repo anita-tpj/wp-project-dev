@@ -66,6 +66,7 @@
         smoothScroll: function () {
             $('a[href*="#"]').click(function () {
                 let target = $(this.hash);
+                if( $(this).attr('href')=='#headerCarousel') return;//This is the exception
                 if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {

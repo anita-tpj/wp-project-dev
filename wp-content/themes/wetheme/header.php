@@ -26,55 +26,54 @@ $theme_opts = get_option('we_opts'); ?>
     </style>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <?php
-        if($theme_opts['logo_type']==1) : ?>
-          <a class="navbar-brand" href="index.html"><?php bloginfo('name'); ?></a>
-        <?php
-        else : ?>
-          <a class="navbar-brand" href="index.html"><img src="<?php echo $theme_opts['logo_img'] ?>"></a>
-        <?php
-        endif; ?>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <?php  
-            wp_nav_menu( array(
-              'theme_location'  => 'primary',
-              'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
-              'container'       => '',
-              'menu_class'      => 'navbar-nav mr-auto',
-              'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-              'walker'          => new WP_Bootstrap_Navwalker(),
-            ) );  
-            ?>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-            <?php
-            if(!empty($theme_opts['twitter'])) : ?>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <?php
+      if($theme_opts['logo_type']==1) : ?>
+        <a class="navbar-brand" href="index.html"><?php bloginfo('name'); ?></a>
+      <?php
+      else : ?>
+        <a class="navbar-brand" href="index.html"><img src="<?php echo $theme_opts['logo_img'] ?>"></a>
+      <?php
+      endif; ?>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <?php  
+          wp_nav_menu( array(
+            'theme_location'  => 'primary',
+            'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+            'container'       => '',
+            'menu_class'      => 'navbar-nav mr-auto',
+            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'          => new WP_Bootstrap_Navwalker(),
+          ) );  
+          ?>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+          <?php
+          if(!empty($theme_opts['twitter'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
+          <?php
+          endif; 
+          if(!empty($theme_opts['facebook'])) : ?>
             <li class="nav-item">
-              <a class="nav-link" href="https://twitter.com/<?php echo $theme_opts['twitter']; ?>"><i class="fab fa-twitter-square"></i></a></li>
-            <?php
-            endif; 
-            if(!empty($theme_opts['facebook'])) : ?>
-              <li class="nav-item">
-                <a class="nav-link" href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
-            <?php
-            endif;
-            if(!empty($theme_opts['youtube'])) : ?>
-              <li class="nav-item">
-                <a class="nav-link" href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
-            <?php
-            endif; ?>
-          </ul>
-        </div>
-      </nav>
-
+              <a class="nav-link" href="https://facebook.com/<?php echo $theme_opts['facebook']; ?>"><i class="fab fa-facebook-square"></i></a></li>
+          <?php
+          endif;
+          if(!empty($theme_opts['youtube'])) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="https://youtube.com/<?php echo $theme_opts['youtube']; ?>"><i class="fab fa-youtube-square"></i></a></li>
+          <?php
+          endif; ?>
+        </ul>
+      </div>
+    </nav>
+    <?php if(!is_front_page()) : ?>      
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
@@ -82,3 +81,5 @@ $theme_opts = get_option('we_opts'); ?>
             <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
       </div>
+    <?php
+    endif; ?>
