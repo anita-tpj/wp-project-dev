@@ -12,6 +12,9 @@ get_header(); ?>
             get_template_part('template_parts/content', get_post_format()); ?>
     <?php   
         endwhile;
+    else: ?>
+        <p><?php __('No Posts Found', 'wetheme') ?></p>
+    <?php
     endif; ?>
 
 </div><!-- /.blog-main -->

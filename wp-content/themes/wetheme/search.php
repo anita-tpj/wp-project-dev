@@ -12,12 +12,15 @@ get_header(); ?>
         <span class="text-info"><?php the_search_query(); ?></span>
     </h3>
     <?php
-        if(have_posts()) :
-            while(have_posts()) : the_post();
-                get_template_part('template_parts/content', get_post_format()); ?>
+    if(have_posts()) :
+        while(have_posts()) : the_post();
+            get_template_part('template_parts/content', get_post_format()); ?>
     <?php
-            endwhile;
-        endif;
+        endwhile;
+    else: ?>
+        <p><?php __('No Posts Found', 'wetheme') ?></p>
+    <?php
+    endif; ?>
     ?>
 
 </div><!-- /.blog-main -->

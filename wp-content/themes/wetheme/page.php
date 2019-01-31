@@ -6,13 +6,15 @@ get_header(); ?>
 <div class="col-md-8 blog-main">
 
     <?php
-        if(have_posts()) :
-            while(have_posts()) : the_post(); ?>
-            <?php get_template_part('template_parts/content', 'page'); ?>
-   <?php
-            endwhile;
-        endif;
-    ?>
+    if(have_posts()) :
+        while(have_posts()) : the_post(); ?>
+        <?php get_template_part('template_parts/content', 'page'); ?>
+    <?php
+        endwhile;
+    else: ?>
+        <p><?php __('No Posts Found', 'wetheme') ?></p>
+    <?php
+    endif; ?>
 
 </div><!-- /.blog-main -->
 
