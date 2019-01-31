@@ -1,7 +1,7 @@
-<div class="blog-post">
+<article class="blog-post">
     <?php 
     if(has_post_thumbnail()) : ?>
-        <div class="blog-post-image">
+        <div class="blog-post-thumb">
             <?php 
             the_post_thumbnail('full', array('class' => 'img-fluid')); ?> 
         </div>
@@ -72,6 +72,6 @@
         <?php comments_template(); ?>
     <?php 
     else : ?>
-        </div><!-- /.blog-post -->
+        </article><!-- /.blog-post -->
     <?php
     endif; ?>

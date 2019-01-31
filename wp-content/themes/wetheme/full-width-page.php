@@ -10,16 +10,12 @@ get_header(); ?>
 <div class="col-md-12 blog-main">
 
     <?php
-    if(have_posts()) :
-        while(have_posts()) : the_post(); ?>
-            <div class="blog-post">
-                <h2 class="blog-post-title"><?php the_title(); ?></h2>
-                <p class="blog-post-content"><?php the_content(); ?></p>
-            </div><!-- /.blog-post -->
-            <?php comments_template(); ?>
+        if(have_posts()) :
+            while(have_posts()) : the_post(); ?>
+            <?php get_template_part('template_parts/content', 'page'); ?>
     <?php
-        endwhile;
-    endif;
+            endwhile;
+        endif;
     ?>
 
 </div><!-- /.blog-main -->
