@@ -16,6 +16,9 @@ include(get_template_directory() . '/includes/admin/init.php');
 include(get_template_directory() . '/process/save-options.php');
 require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php'; // Register Custom Navigation Walker
 include(get_template_directory() . '/includes/shortcodes/facebook.php');
+include(get_template_directory() . '/includes/theme_customizer.php');
+include(get_template_directory() . '/includes/front/head.php');
+
 
 //Action & Filters Hooks
 add_action('wp_enqueue_scripts', 'we_enqueue');
@@ -24,6 +27,8 @@ add_action('widgets_init', 'we_widgets');
 add_action('after_switch_theme', 'we_activate');
 add_action('admin_menu', 'we_admin_menus');
 add_action('admin_init', 'we_admin_init');
+add_action('customize_register', 'we_customize_register');
+add_action('wp_head', 'we_head');
 
 //Shortcodes
 add_shortcode('we_fb', 'we_facebook_shortcode');
