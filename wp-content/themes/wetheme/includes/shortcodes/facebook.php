@@ -16,3 +16,6 @@ function we_facebook_shortcode($atts, $content) {
 function we_icon_shortcode($atts) {
     return '<i class="fab fa-'. $atts['icon'].'"></i>';
 }
+
+//Usage
+//[we_fb]<strong>[we_i icon="facebook-f"] Like me on Facebook</strong>[/we_fb]
