@@ -18,3 +18,13 @@ function we_excerpt_more( $more ) {
 function we_remove_version(){
   return '';
 }
+
+
+//Remove title prefix on Ctaegory, Archive pages
+function we_remove_title_prefix($title){
+  if(is_tax()){
+    return single_term_title( '', false );
+  }else{
+    return preg_replace('/^\w+:/', '', $title);
+  }
+}

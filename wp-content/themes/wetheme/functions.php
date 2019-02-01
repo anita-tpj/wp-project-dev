@@ -37,7 +37,7 @@ add_action( 'tgmpa_register', 'we_register_required_plugins' );
 add_filter('excerpt_length', 'we_set_excerpt_length');
 add_filter('excerpt_more', 'we_excerpt_more' );
 add_filter('the_generator', 'we_remove_version');
-apply_filters('the_excerpt', 'we_excerpt');
+add_filter('get_the_archive_title', 'we_remove_title_prefix');
 
 //Shortcodes
 add_shortcode('we_fb', 'we_facebook_shortcode');
