@@ -24,10 +24,7 @@
     </h2>
 
     <div class="blog-post-meta">
-        <span class="date"><?php the_time('g:i a'); ?></span>
-        <span class="time"><?php the_time('d M Y'); ?></span>
-        <span class="post-author">by <a href="<?php the_author_link(); ?>"><?php the_author_posts_link()(); ?></a></span>
-        <span class="tag"><?php the_category(','); ?></span>
+        <?php echo we_post_meta(); ?>
     </div>
 
     <?php 

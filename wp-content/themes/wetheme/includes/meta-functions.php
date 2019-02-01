@@ -28,3 +28,29 @@ function we_remove_title_prefix($title){
     return preg_replace('/^\w+:/', '', $title);
   }
 }
+
+//Display Post Meta Data
+function we_post_meta() {
+
+  $date = get_the_time('d M Y');
+  $author = get_the_author();
+  $author = '<a href="'.esc_url(get_author_posts_url(get_the_author_meta('ID'))).'">'.esc_html(get_the_author()).'</a>';
+  $categories = get_the_category();
+  $separator = ", ";
+  $cats = "";
+
+
+  if($categories){
+    $i=0;
+    foreach($categories as $category){
+      if($i > 0){
+        $cats .= $separator;
+      }
+      $cats .= '<a href="'.esc_url(get_category_link($category->term_id)).'" alt="'.esc_attr('View all posts in$s', $category->name).'">'.esc_html($category->name).'</a>';
+      $i++;
+      }
+    }
+
+  $output = 'Posted on: ' . $date . ' | by '.$author.' | Posted in: ' . $cats;
+  return $output;
+}
