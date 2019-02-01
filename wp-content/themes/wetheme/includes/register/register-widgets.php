@@ -1,5 +1,5 @@
 <?php
-function we_widgets() {
+function we_register_widgets() {
     register_sidebar(array(
         'name'          => __('Blog Page Sidebar', 'wetheme'),
         'id'            => 'we_sidebar',
