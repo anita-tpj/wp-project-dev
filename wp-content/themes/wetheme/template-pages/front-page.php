@@ -67,24 +67,24 @@ get_header(); ?>
 
 <!-- Three columns of text below the carousel -->
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-md-4">
             <?php 
             if(is_active_sidebar('we_hp_box1')) :
                 dynamic_sidebar('we_hp_box1');
             endif; ?>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        </div><!-- /.col-md-4 -->
+        <div class="col-md-4">
             <?php 
             if(is_active_sidebar('we_hp_box2')) :
                 dynamic_sidebar('we_hp_box2');
             endif; ?>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        </div><!-- /.col-md-4 -->
+        <div class="col-md-4">
         <?php 
             if(is_active_sidebar('we_hp_box3')) :
                 dynamic_sidebar('we_hp_box3');
             endif; ?>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-md-4 -->
     </div><!-- /.row -->
 </main><!-- /.container -->
 <?php 
