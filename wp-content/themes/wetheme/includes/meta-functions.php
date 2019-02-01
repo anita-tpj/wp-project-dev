@@ -14,3 +14,7 @@ function we_excerpt_more( $more ) {
   endif;
 }
 
+//Remove meta tag about WP Version in HEADER
+function we_remove_version(){
+  return '';
+}
