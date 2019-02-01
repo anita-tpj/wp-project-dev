@@ -56,7 +56,7 @@
             )
         ); */?>
             <div class="blog-post-tags"><?php the_tags(); ?></div>
-        </div><!-- /.blog-post -->
+    </article><!-- /.blog-post -->
 
         <nav class="blog-pagination text-center">
             <span>
