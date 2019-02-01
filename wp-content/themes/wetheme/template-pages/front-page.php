@@ -51,20 +51,40 @@ get_header(); ?>
 
 <main role="main" class="container">
     <div class="row">
-    <div class="col-md-8 blog-main">
+        <div class="blog-main">
+            <?php
+            if(have_posts()) :
+                while(have_posts()) : the_post(); ?>
+                <?php get_template_part('template_parts/content', 'page'); ?>
+            <?php
+                endwhile;
+            else: ?>
+                <p><?php __('No Posts Found', 'wetheme') ?></p>
+            <?php
+            endif; ?>
+        </div><!-- /.blog-main -->
+    </div><!-- /.row -->
 
-    <?php
-    if(have_posts()) :
-        while(have_posts()) : the_post(); ?>
-        <?php get_template_part('template_parts/content', 'page'); ?>
-    <?php
-        endwhile;
-    else: ?>
-        <p><?php __('No Posts Found', 'wetheme') ?></p>
-    <?php
-    endif; ?>
-
-    </div><!-- /.blog-main -->
+<!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <?php 
+            if(is_active_sidebar('we_hp_box1')) :
+                dynamic_sidebar('we_hp_box1');
+            endif; ?>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <?php 
+            if(is_active_sidebar('we_hp_box2')) :
+                dynamic_sidebar('we_hp_box2');
+            endif; ?>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+        <?php 
+            if(is_active_sidebar('we_hp_box3')) :
+                dynamic_sidebar('we_hp_box3');
+            endif; ?>
+        </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 </main><!-- /.container -->
 <?php 
