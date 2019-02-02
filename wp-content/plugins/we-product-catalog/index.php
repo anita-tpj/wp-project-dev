@@ -8,6 +8,9 @@ Author URI: http://tanita.webege.com
 Text Domain: we-product-catalog
 */
 
+if(!function_exists('add_action')) :
+    echo 'Not allowed!';
+endif;
 
 //Setup
 
