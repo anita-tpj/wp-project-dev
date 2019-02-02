@@ -7,10 +7,12 @@ function we_set_excerpt_length(){
 
 // Excerpt Link Control
 function we_excerpt_more( $more ) {
+  $more = "...read more";
   if(is_front_page()) :
-    return '<div class="blog-post-read-more"><a class="post-excerpt-btn btn btn-sm btn-outline-dark" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'wetheme') . '</a></div>';
+    $more = "Read More";
+    return '<div class="blog-post-read-more"><a class="post-excerpt-btn btn btn-sm btn-outline-dark" href="'. get_permalink( get_the_ID() ) . '">' . __($more, 'wetheme') . '</a></div>';
   else :
-    return '<a class="post-excerpt-link" href="'. get_permalink( get_the_ID() ) . '">' . __('...read more', 'wetheme') . '</a>';
+    return '<a class="post-excerpt-link" href="'. get_permalink( get_the_ID() ) . '">' . __($more, 'wetheme') . '</a>';
   endif;
 }
 
@@ -53,4 +55,39 @@ function we_post_meta() {
 
   $output = 'Posted on: ' . $date . ' | by '.$author.' | Posted in: ' . $cats;
   return $output;
+}
+
+//Single Post Navigation
+
+function we_post_nav(){
+  $nav = '<nav class="blog-pagination text-center">';
+  $prev = get_previous_post_link('%link', '%title »');
+  $next = get_next_post_link('%link' ,'« %title');
+  $nav.= '<span>'.$next.'</span><span>'.$prev.'</span>';
+  
+  return $nav;
+}
+
+//Blog Post Page Pagination
+
+function we_blog_pagination(){
+  $pagination = '<nav class="blog-pagination">';
+  $next = get_next_posts_link( "« Newer");
+  $prev = get_previous_posts_link( 'Older »');
+
+  if($next) :
+    $pagination .= '<span class="btn btn-outline-primary">'.$next.'</span>';
+  else :
+    $pagination .= '<span class="btn btn-outline-secondary disabled">« Newer</span>';
+  endif;
+
+  if($prev) :
+    $pagination .= '<span class="btn btn-outline-primary">'.$prev.'</span>';
+  else :
+    $pagination .= '<span class="btn btn-outline-secondary disabled">Older »</span>';
+  endif;
+
+  $pagination .='</nav>';
+  
+  return $pagination;
 }

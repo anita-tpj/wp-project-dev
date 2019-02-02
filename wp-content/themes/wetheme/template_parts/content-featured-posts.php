@@ -11,7 +11,7 @@
         </h3>
         <div class="mb-1 text-muted"><?php echo the_date('M j'); ?></div>
         <p class="blog-post-excerpt card-text mb-auto">
-            <?php the_excerpt(); ?>
+            <?php the_excerpt('more') ?>
         </p>
         <a href="#">Continue reading</a>
     </div>

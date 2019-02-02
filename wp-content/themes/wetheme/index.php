@@ -6,7 +6,7 @@ get_header(); ?>
     <section>
         <div class="row">
                 <?php
-                $fetaured_posts = new WP_Query('posts_per_page=2' );
+                $fetaured_posts = new WP_Query('posts_per_page=2&orderby=rand' );
                 if ($fetaured_posts->have_posts()) :
                     while($fetaured_posts->have_posts()) : $fetaured_posts->the_post(); ?>
                         <?php get_template_part('template_parts/content', 'featured-posts'); ?>
@@ -37,33 +37,7 @@ get_header(); ?>
             <?php
             endif; ?>
 
-            <nav class="blog-pagination">
-                <?php 
-                if( get_next_posts_link() ) : ?>
-                    <span class="btn btn-outline-primary">
-                        <?php
-                        next_posts_link( '« Newer'); ?>
-                    </span>
-                <?php 
-                else : ?>
-                    <span class="btn btn-outline-secondary disabled">« Newer
-                    </span>
-                <?php
-                endif;
-
-                if( get_previous_posts_link() ) : ?>
-                    <span class="btn btn-outline-primary">
-                        <?php 
-                        previous_posts_link( 'Older »'); ?>
-                    </span>
-                <?php 
-                else : ?>
-                    <span class="btn btn-outline-secondary disabled">Older »
-                    </span>
-                <?php
-                endif; ?>
-
-            </nav>
+            <?php echo we_blog_pagination();?>
 
         </div><!-- /.blog-main -->
 

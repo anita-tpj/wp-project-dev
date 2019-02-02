@@ -49,18 +49,8 @@
         ); */?>
             <div class="blog-post-tags"><?php the_tags(); ?></div>
     </article><!-- /.blog-post -->
-
-        <nav class="blog-pagination text-center">
-            <span>
-                <?php
-                next_post_link( '%link' ,'« %title'); ?>
-            </span>
-
-            <span>
-                <?php 
-                previous_post_link('%link', '%title »'); ?>
-            </span>
-        </nav>
+           
+        <?php echo we_post_nav(); ?>
         <?php comments_template(); ?>
     <?php 
     else : ?>
