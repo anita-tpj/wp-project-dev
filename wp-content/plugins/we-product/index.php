@@ -18,10 +18,12 @@ endif;
 
 //Includes
 include('includes/activate.php');
+include('includes/init.php');
 
 
 //Hooks
 register_activation_hook('__FILE__', 'wep_activate_plugin');
+add_action('init', 'we_product_init')
 
 
 //Shortcodes
