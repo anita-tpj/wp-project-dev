@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WE Products Catalog
+Plugin Name: WE Products
 Description: WordPress plugin that allows user to create products, services, portfolios...
 Version: 1.0.0
 Author: Wall-E@New
 Author URI: http://tanita.webege.com
-Text Domain: we-product
+Text Domain: weproduct
 */
 
 if(!function_exists('add_action')) :
@@ -19,12 +19,13 @@ endif;
 //Includes
 include('includes/activate.php');
 include('includes/init.php');
+include('includes/admin/init.php');
 
 
 //Hooks
 register_activation_hook('__FILE__', 'wep_activate_plugin');
-add_action('init', 'we_product_init')
+add_action('init', 'weproduct_init');
+add_action('admin_init', 'weproduct_admin_init');
 
 
 //Shortcodes
-

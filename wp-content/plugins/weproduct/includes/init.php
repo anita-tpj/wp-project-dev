@@ -1,5 +1,5 @@
 <?php
-function we_product_init() {
+function weproduct_init() {
     $labels = array(
 		'name'               => __( 'Products', 'we-product' ),
 		'singular_name'      => __( 'Product', 'we-product' ),
@@ -34,5 +34,5 @@ function we_product_init() {
         'taxonomies'         => array('category', 'post_tag')   
 	);
 
-	register_post_type( 'product', $args );
+	register_post_type( 'weproduct', $args );
 }
