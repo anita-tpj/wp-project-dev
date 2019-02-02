@@ -12,7 +12,7 @@ get_header(); ?>
     <?php
         endwhile;
     else: ?>
-        <p><?php __('No Posts Found', 'wetheme') ?></p>
+        <p><?php __('No Page Found', 'wetheme') ?></p>
     <?php
     endif; ?>
 
