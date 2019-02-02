@@ -10,6 +10,7 @@ Text Domain: we-product-catalog
 
 if(!function_exists('add_action')) :
     echo 'Not allowed!';
+    exit();
 endif;
 
 //Setup
