@@ -5,7 +5,7 @@ Description: WordPress plugin that allows user to create products, services, por
 Version: 1.0.0
 Author: Wall-E@New
 Author URI: http://tanita.webege.com
-Text Domain: we-product-catalog
+Text Domain: we-product
 */
 
 if(!function_exists('add_action')) :
@@ -21,7 +21,7 @@ include('includes/activate.php');
 
 
 //Hooks
-register_activation_hook('__FILE__', 'wepc_activate_plugin');
+register_activation_hook('__FILE__', 'wep_activate_plugin');
 
 
 //Shortcodes
