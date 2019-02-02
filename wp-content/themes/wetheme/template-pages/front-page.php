@@ -50,42 +50,53 @@ get_header(); ?>
 </section>
 
 <main role="main" class="container">
-    <div class="row">
-        <div class="blog-main">
-            <?php
-            if(have_posts()) :
-                while(have_posts()) : the_post(); ?>
-                <?php get_template_part('template_parts/content', 'page'); ?>
-            <?php
-                endwhile;
-            else: ?>
-                <p><?php __('No Posts Found', 'wetheme') ?></p>
-            <?php
-            endif; ?>
-        </div><!-- /.blog-main -->
-    </div><!-- /.row -->
+    <section>
+        <div class="row">
+            <div class="blog-main">
+                <?php
+                if(have_posts()) :
+                    while(have_posts()) : the_post(); ?>
+                    <?php get_template_part('template_parts/content', 'page'); ?>
+                <?php
+                    endwhile;
+                else: ?>
+                    <p><?php __('No Posts Found', 'wetheme') ?></p>
+                <?php
+                endif; ?>
+            </div><!-- /.blog-main -->
+        </div><!-- /.row -->
+    </section>
 
 <!-- Three columns of text below the carousel -->
-    <div class="row">
-        <div class="col-md-4">
+    <section>
+        <div class="row">
+            <div class="col-md-4">
+                <?php 
+                if(is_active_sidebar('we_hp_box1')) :
+                    dynamic_sidebar('we_hp_box1');
+                endif; ?>
+            </div><!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <?php 
+                if(is_active_sidebar('we_hp_box2')) :
+                    dynamic_sidebar('we_hp_box2');
+                endif; ?>
+            </div><!-- /.col-md-4 -->
+            <div class="col-md-4">
             <?php 
-            if(is_active_sidebar('we_hp_box1')) :
-                dynamic_sidebar('we_hp_box1');
-            endif; ?>
-        </div><!-- /.col-md-4 -->
-        <div class="col-md-4">
-            <?php 
-            if(is_active_sidebar('we_hp_box2')) :
-                dynamic_sidebar('we_hp_box2');
-            endif; ?>
-        </div><!-- /.col-md-4 -->
-        <div class="col-md-4">
-        <?php 
-            if(is_active_sidebar('we_hp_box3')) :
-                dynamic_sidebar('we_hp_box3');
-            endif; ?>
-        </div><!-- /.col-md-4 -->
-    </div><!-- /.row -->
+                if(is_active_sidebar('we_hp_box3')) :
+                    dynamic_sidebar('we_hp_box3');
+                endif; ?>
+            </div><!-- /.col-md-4 -->
+        </div><!-- /.row -->
+    <section>
+
+<!-- Three columns of recent blog post loop -->
+    <section>
+        <div class="row">
+            <?php get_template_part('template_parts/content', 'recent-posts'); ?>
+        </div><!-- /.row -->
+    </section>
 </main><!-- /.container -->
 <?php 
 get_footer(); ?>

@@ -6,4 +6,3 @@
       'before' => '<p class="text-center">' . __( 'Pages:' ),
       'after'  => '</p>'));
 ?>
-<?php comments_template(); ?>
