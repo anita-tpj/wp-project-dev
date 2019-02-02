@@ -58,7 +58,6 @@ function we_post_meta() {
 }
 
 //Single Post Navigation
-
 function we_post_nav(){
   $nav = '<nav class="blog-pagination text-center">';
   $prev = get_previous_post_link('%link', '%title »');
@@ -69,7 +68,6 @@ function we_post_nav(){
 }
 
 //Blog Post Page Pagination
-
 function we_blog_pagination(){
   $pagination = '<nav class="blog-pagination">';
   $next = get_next_posts_link( "« Newer");
