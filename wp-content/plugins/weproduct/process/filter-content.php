@@ -17,7 +17,6 @@ function wep_filter_product_content($content) {
     $weproduct_html = str_replace('SKU_PH', $weproduct_data['sku'], $weproduct_html);
     $weproduct_html = str_replace('STOCK_PH', $weproduct_data['stock'], $weproduct_html);
 
-
     $weproduct_html = str_replace('NAME_I18N', __('Product Name', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('DESC_I18N', __('Product Description', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('DETAILS_I18N', __('Product Details', 'weproduct'), $weproduct_html);

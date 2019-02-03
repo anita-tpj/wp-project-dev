@@ -1,25 +1,25 @@
 <?php
 function weproduct_init() {
     $labels = array(
-		'name'               => __( 'Products', 'we-product' ),
-		'singular_name'      => __( 'Product', 'we-product' ),
-		'menu_name'          => __( 'Products', 'we-product' ),
-		'name_admin_bar'     => __( 'Product', 'we-product' ),
-		'add_new'            => __( 'Add New', 'we-product' ),
-		'add_new_item'       => __( 'Add New Product', 'we-product' ),
-		'new_item'           => __( 'New Product', 'we-product' ),
-		'edit_item'          => __( 'Edit Product', 'we-product' ),
-		'view_item'          => __( 'View Product', 'we-product' ),
-		'all_items'          => __( 'All Products', 'we-product' ),
-		'search_items'       => __( 'Search Products', 'we-product' ),
-		'parent_item_colon'  => __( 'Parent Products:', 'we-product' ),
-		'not_found'          => __( 'No Products found.', 'we-product' ),
-		'not_found_in_trash' => __( 'No Products found in Trash.', 'we-product' )
+		'name'               => __( 'Products', 'weproduct' ),
+		'singular_name'      => __( 'Product', 'weproduct' ),
+		'menu_name'          => __( 'Products', 'weproduct' ),
+		'name_admin_bar'     => __( 'Product', 'weproduct' ),
+		'add_new'            => __( 'Add New', 'weproduct' ),
+		'add_new_item'       => __( 'Add New Product', 'weproduct' ),
+		'new_item'           => __( 'New Product', 'weproduct' ),
+		'edit_item'          => __( 'Edit Product', 'weproduct' ),
+		'view_item'          => __( 'View Product', 'weproduct' ),
+		'all_items'          => __( 'All Products', 'weproduct' ),
+		'search_items'       => __( 'Search Products', 'weproduct' ),
+		'parent_item_colon'  => __( 'Parent Products:', 'weproduct' ),
+		'not_found'          => __( 'No Products found.', 'weproduct' ),
+		'not_found_in_trash' => __( 'No Products found in Trash.', 'weproduct' )
 	);
 
 	$args = array(
 		'labels'             => $labels,
-        'description'        => __( 'A custom post type for products', 'we-product' ),
+        'description'        => __( 'A custom post type for products', 'weproduct' ),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
