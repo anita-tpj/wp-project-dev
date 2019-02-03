@@ -14,7 +14,7 @@ if(!function_exists('add_action')) :
 endif;
 
 //Setup
-
+define('WEPRODUCT_PLUGIN_URL',__FILE__);
 
 //Includes
 include('includes/activate.php');
