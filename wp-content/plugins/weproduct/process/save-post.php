@@ -9,6 +9,7 @@ function wep_save_post_admin($post_id, $post, $update) {
     $weproduct_data['description'] = sanitize_text_field($_POST['wepProductDescription']);
     $weproduct_data['details'] = sanitize_text_field($_POST['wepProductDetails']);
     $weproduct_data['type'] = sanitize_text_field($_POST['wepProductType']);
+    //$weproduct_data['category'] = sanitize_text_field($_POST['wepProductCategory']);
     $weproduct_data['image'] = esc_url_raw($_POST['wepProductImage']);
     $weproduct_data['price'] = sanitize_text_field($_POST['wepProductPrice']);
     $weproduct_data['sku'] = sanitize_text_field($_POST['wepProductSKU']);

@@ -8,6 +8,7 @@ function wep_options_mb($post) {
         'description' => '',
         'details' => '',
         'type' => '',
+        'category' => '',
         'image' => '',
         'price' => '',
         'sku' => '',
@@ -42,11 +43,33 @@ function wep_options_mb($post) {
     </select>
   </div>
 
+  <!--<div class="form-group">
+    <div class="row">
+        <label class="col-sm-4" for="wepProductCategory">Product Category</label>
+        <div class="col-sm-8">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="wepProductCategory1" name="wepProductCategory[]" value="1" <?php echo $weproduct_data['category'] === "1" ? "checked" : '' ;?>>
+                <label class="form-check-label" for="wepProductCategory1">1</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="wepProductCategory2" name="wepProductCategory[]" value="2"  <?php echo $weproduct_data['category'] === "2" ? "checked" : '' ;?>>
+                <label class="form-check-label" for="wepProductCategory2">2</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="wepProductCategory3" name="wepProductCategory[]" value="3" <?php echo $weproduct_data['category'] === "3" ? "checked" : '' ;?>>
+                <label class="form-check-label" for="wepProductCategory3">3</label>
+            </div>
+        </div>
+    </div>
+  </div>-->
+
   <div class="form-group">
     <label for="wepProductImage">Product Image</label>
-    <input type="text" class="form-control" id="wepProductImage" name="wepProductImage" value="<?php echo $weproduct_data['image']; ?>"placeholder="Product image">
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="js-wepProductImage"><?php _e('Upload', 'weproduct'); ?></button>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="wepProductImage" name="wepProductImage" value="<?php echo $weproduct_data['image']; ?>"placeholder="Product image">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="js-wepProductImage"><?php _e('Upload', 'weproduct'); ?></button>
+        </div>
     </div>
   </div>
 
@@ -82,7 +105,7 @@ function wep_options_mb($post) {
 
   <div class="form-group form-check">
     <label class="form-check-label" for="wepFeaturedProduct">Featured Product</label>
-    <input type="checkbox" class="form-check-input" id="wepFeaturedProduct" name="wepFeaturedProduct" value="yes" <?php echo $weproduct_data['featured'] ==="yes" ? "checked" : ""; ?> >
+    <input type="checkbox" class="form-check-input" id="wepFeaturedProduct" name="wepFeaturedProduct" value="yes" <?php echo $weproduct_data['featured'] === "yes" ? "checked" : ""; ?> >
   </div>
 <?php
 }
