@@ -45,7 +45,11 @@ function wep_options_mb($post) {
   <div class="form-group">
     <label for="wepProductImage">Product Image</label>
     <input type="text" class="form-control" id="wepProductImage" name="wepProductImage" value="<?php echo $weproduct_data['image']; ?>"placeholder="Product image">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="js-wepProductImage"><?php _e('Upload', 'weproduct'); ?></button>
+    </div>
   </div>
+
   <div class="form-group">
     <label for="wepProductPrice">Product Price</label>
     <input type="text" class="form-control" id="wepProductPrice" name="wepProductPrice" value="<?php echo $weproduct_data['price']; ?>" placeholder="Product price">

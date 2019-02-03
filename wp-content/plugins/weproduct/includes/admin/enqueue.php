@@ -11,7 +11,10 @@ function wep_admin_enqueue() {
     wp_enqueue_style('wep_bootstrap');
 
     wp_register_script('wep_bootstrap', plugins_url('/src/scripts/bootstrap.js', WEPRODUCT_PLUGIN_URL), array('jquery'), array(), '4.2.1', true);
+    wp_register_script('wep_script', plugins_url('/src/scripts/script.js', WEPRODUCT_PLUGIN_URL), array('jquery'), array(), false, true);
 
+    wp_enqueue_media();
+    wp_enqueue_script('wep_script');
     wp_enqueue_script('jquery');
     wp_enqueue_script('wep_bootstrap');
 
