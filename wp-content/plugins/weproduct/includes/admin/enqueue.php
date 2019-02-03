@@ -6,7 +6,7 @@ function wep_admin_enqueue() {
         return;
     }
 
-    wp_register_style('wep_bootstrap', plugins_url('/src/sass/_vendor/_bootstrap/compiled/bootstrap.css', WEPRODUCT_PLUGIN_URL ), '4.2.1');
+    wp_register_style('wep_bootstrap', plugins_url('/src/sass/_vendors/_bootstrap/compiled/bootstrap.css', WEPRODUCT_PLUGIN_URL ), '4.2.1');
 
     wp_enqueue_style('wep_bootstrap');
 
