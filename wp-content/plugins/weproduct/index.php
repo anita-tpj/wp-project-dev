@@ -22,6 +22,8 @@ include('includes/init.php');
 include('includes/admin/init.php');
 include('process/save-post.php');
 include('process/filter-content.php');
+include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets.php');
+include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets/daily-product.php');
 
 
 //Hooks
@@ -30,6 +32,7 @@ add_action('init', 'weproduct_init');
 add_action('admin_init', 'weproduct_admin_init');
 add_action('save_post_weproduct', 'wep_save_post_admin', 10, 3);
 add_filter('the_content', 'wep_filter_product_content');
+add_action('widgets_init', 'wep_widgets_init');
 
 
 //Shortcodes
