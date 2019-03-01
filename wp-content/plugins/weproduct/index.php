@@ -28,8 +28,9 @@ include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets/daily-product.php');
 include('includes/cron.php');
 
 
+
 //Hooks
-register_activation_hook('__FILE__', 'wep_activate_plugin');
+register_activation_hook(__FILE__, 'wep_activate_plugin');
 register_deactivation_hook(__FILE__, 'wep_deactivate_plugin');
 add_action('init', 'weproduct_init');
 add_action('admin_init', 'weproduct_admin_init');
@@ -37,6 +38,7 @@ add_action('save_post_weproduct', 'wep_save_post_admin', 10, 3);
 add_filter('the_content', 'wep_filter_product_content');
 add_action('widgets_init', 'wep_widgets_init');
 add_action('wep_daily_product_hook', 'wep_generate_daily_product');
+
 
 
 //Shortcodes

@@ -24,7 +24,7 @@ Class WE_Daily_Product_Widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', $title);
 
 		echo $before_widget;
-		echo $before_title . $title . $after_title;
+		echo $before_title . $title . $after_title;                      
 
 		$product_id = get_transient('wep_daily_product'); ?>
 		
@@ -32,7 +32,6 @@ Class WE_Daily_Product_Widget extends WP_Widget {
 
 		<?php
 		echo $after_widget;
-		var_dump($product_id);
 	}
 
 	/**

@@ -6,6 +6,5 @@ function wep_generate_daily_product() {
                                   WHERE post_status='publish' AND post_type='weproduct' 
                                   ORDER BY rand() LIMIT 1");
  
-
-    set_transient('wep_daily_product', $product_id, 60*60*24);                            
+    set_transient('wep_daily_product', $product_id, 60*60*24);                       
 }
