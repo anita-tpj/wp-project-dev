@@ -3,7 +3,7 @@
     <div><strong>DESC_I18N: </strong>DESC_PH</div>
     <div><strong>DETAILS_I18N: </strong>DETAILS_PH</div>
     <div><strong>TYPE_I18N: </strong>TYPE_PH</div>
-    <div><strong>CATEGORY_I18N: </strong>CATEGORY_PH</div>
+    <!--<div><strong>CATEGORY_I18N: </strong>CATEGORY_PH</div>-->
     <div><strong>IMAGE_I18N: </strong><img src="IMAGE_PH"></div>
     <div><strong>PRICE_I18N: </strong>PRICE_PH</div>
     <div><strong>SKU_I18N: </strong>SKU_PH</div>

@@ -18,7 +18,21 @@ Class WE_Daily_Product_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         // outputs the content of the widget
-        echo "Widget of the Day";
+		extract($args);
+		extract($instance);
+
+		$title = apply_filters( 'widget_title', $title);
+
+		echo $before_widget;
+		echo $before_title . $title . $after_title;
+
+		$product_id = get_transient('wep_daily_product'); ?>
+		
+		<a href="<?php echo get_permalink($product_id); ?>"><?php echo get_the_title($product_id); ?></a>
+
+		<?php
+		echo $after_widget;
+		var_dump($product_id);
 	}
 
 	/**
@@ -29,7 +43,7 @@ Class WE_Daily_Product_Widget extends WP_Widget {
 	public function form( $instance ) {
         // outputs the options form on admin
         $default = array('title'=>'Product of the day');
-        $instance = wp_parse_args((array) $instance, $default); ?>
+        $instance = wp_parse_args( (array) $instance, $default); ?>
 
         <p>
         <label for="<?php echo $this->get_field_id('title'); ?>">Title: </label>
@@ -37,7 +51,7 @@ Class WE_Daily_Product_Widget extends WP_Widget {
             type="text" 
             class="widefat" 
             id="<?php echo $this->get_field_id('title'); ?>"
-            name="<?php echo $this->get_field_id('title'); ?>"
+            name="<?php echo $this->get_field_name('title'); ?>"
             value="<?php echo esc_attr($instance['title']); ?>">
         </p>
 

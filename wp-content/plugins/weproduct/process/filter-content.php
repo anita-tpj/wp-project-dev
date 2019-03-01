@@ -12,7 +12,7 @@ function wep_filter_product_content($content) {
     $weproduct_html = str_replace('DESC_PH', $weproduct_data['description'], $weproduct_html);
     $weproduct_html = str_replace('DETAILS_PH', $weproduct_data['details'], $weproduct_html);
     $weproduct_html = str_replace('TYPE_PH', $weproduct_data['type'], $weproduct_html);
-    $weproduct_html = str_replace('CATEGORY_PH', $weproduct_data['category'], $weproduct_html);
+    //$weproduct_html = str_replace('CATEGORY_PH', $weproduct_data['category'], $weproduct_html);
     $weproduct_html = str_replace('IMAGE_PH', $weproduct_data['image'], $weproduct_html);
     $weproduct_html = str_replace('PRICE_PH', $weproduct_data['price'], $weproduct_html);
     $weproduct_html = str_replace('SKU_PH', $weproduct_data['sku'], $weproduct_html);
@@ -22,7 +22,7 @@ function wep_filter_product_content($content) {
     $weproduct_html = str_replace('DESC_I18N', __('Product Description', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('DETAILS_I18N', __('Product Details', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('TYPE_I18N', __('Product Type', 'weproduct'), $weproduct_html);
-    $weproduct_html = str_replace('CATEGORY_I18N',__('Product Category', 'weproduct'), $weproduct_html);
+    //$weproduct_html = str_replace('CATEGORY_I18N',__('Product Category', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('IMAGE_I18N', __('Product Image', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('PRICE_I18N', __('Product Price', 'weproduct'), $weproduct_html);
     $weproduct_html = str_replace('SKU_I18N', __('Product SKU', 'weproduct'), $weproduct_html);
