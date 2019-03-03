@@ -6,14 +6,11 @@
         <input type="text" class="form-control" id="wepProductName" name="wepProductName" value="<?php echo $weproduct_data['name']; ?>" placeholder="Product name">
     </div>
 
-    <div class="form-group">
-        <label for="wepProductDescription">Product Description</label>
-        <textarea class="form-control" id="wepProductDescription" name="wepProductDescription" rows="3" placeholder="Product description"><?php echo $weproduct_data['description']; ?></textarea>
-    </div>
+    WEPRODUCT_DESCRIPTION_EDITOR
 
     <div class="form-group">
         <label for="weproductDetails">Product Details</label>
-        <textarea class="form-control" id="weproductDescription" name="wepProductDetails" rows="3" placeholder="Product details"><?php echo $weproduct_data['details']; ?></textarea>
+        <textarea class="form-control" id="wepProductDetails" name="wepProductDetails" rows="3" placeholder="Product details"><?php echo $weproduct_data['details']; ?></textarea>
     </div>
 
     <div class="form-group">
