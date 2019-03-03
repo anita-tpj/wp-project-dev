@@ -26,6 +26,7 @@ include('process/filter-content.php');
 include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets.php');
 include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets/daily-product.php');
 include('includes/cron.php');
+include('includes/shortcodes/creator.php');
 
 
 
@@ -42,3 +43,4 @@ add_action('wep_daily_product_hook', 'wep_generate_daily_product');
 
 
 //Shortcodes
+add_shortcode('weproduct_creator', 'wep_product_creator_shortcode');
