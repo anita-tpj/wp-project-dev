@@ -13,7 +13,8 @@ node_modules/
 bower_components/
 
 # ignore wp-config
-wp-config.php
+/wp-config.php
+/wp-config-sample.php
 
 # ignore .idea
 .idea
@@ -65,3 +66,4 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 !wp-content/uploads/
+wp-config.php
