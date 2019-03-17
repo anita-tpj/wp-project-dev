@@ -25,6 +25,7 @@ include('process/save-post.php');
 include('process/filter-content.php');
 include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets.php');
 include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets/daily-product.php');
+include('includes/widgets/new-products.php');
 include('includes/cron.php');
 include('includes/shortcodes/creator.php');
 include('process/submit-user-product.php');
