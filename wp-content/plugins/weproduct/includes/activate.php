@@ -4,5 +4,7 @@ function wep_activate_plugin() {
         wp_die(__('You must must update WordPress to use this plugin', 'we-product'));
     endif;
 
+    weproduct_init();
+    flush_rewrite_rules();
     wp_schedule_event(time(), 'daily', 'wep_daily_product_hook');
 }
