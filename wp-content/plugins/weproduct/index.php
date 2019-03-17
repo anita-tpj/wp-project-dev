@@ -27,6 +27,7 @@ include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets.php');
 include(dirname(WEPRODUCT_PLUGIN_URL) . '/includes/widgets/daily-product.php');
 include('includes/cron.php');
 include('includes/shortcodes/creator.php');
+include('process/submit-user-product.php');
 
 
 
@@ -39,6 +40,8 @@ add_action('save_post_weproduct', 'wep_save_post_admin', 10, 3);
 add_filter('the_content', 'wep_filter_product_content');
 add_action('widgets_init', 'wep_widgets_init');
 add_action('wep_daily_product_hook', 'wep_generate_daily_product');
+add_action('wp_ajax_wep_submit_user_product', 'wep_submit_user_product');
+add_action('wp_ajax_nopriv_wep_submit_user_product', 'wep_submit_user_product');
 
 
 
