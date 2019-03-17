@@ -22,6 +22,7 @@ include(get_template_directory() . '/includes/front/head.php');
 require_once get_template_directory() . '/includes/libs/class-wp-bootstrap-navwalker.php'; // Register Custom Navigation Walker
 require_once get_template_directory() . '/includes/libs/class-tgm-plugin-activation.php'; // Register Custom Navigation Walker
 include(get_template_directory() . '/includes/register/register-plugins.php');
+include(get_template_directory() . '/includes/widgets/class-we-widget-recent-posts.php');
 
 
 //Action & Filters Hooks

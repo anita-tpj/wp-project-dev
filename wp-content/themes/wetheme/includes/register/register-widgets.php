@@ -47,4 +47,7 @@ function we_register_widgets() {
         'after_title'   => '</h2>'
         )
     );
+
+    unregister_widget('WP_Widget_Recent_Posts');
+    register_widget('WE_Widget_Recent_Posts');
 }
